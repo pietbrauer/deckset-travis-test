@@ -1,4 +1,4 @@
 before_script:
     - sudo apt-get install aspell
     - cp .aspell.en.pws ~/
-script: "cat presentation.md | aspell list -d en --encoding utf-8"
+script: cat presentation.md | aspell list -d en --encoding utf-8 | exit $(wc -l)
